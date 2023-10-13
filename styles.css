@@ -1,0 +1,118 @@
+/* Cabezal ---------------------------- */
+.navbar{
+    grid-area: navbar;
+}
+
+.navbar input{
+    padding-right: 5rem;
+    margin-left: rem;
+    
+}
+
+/* Fin cabezal ---------------------------- */
+
+/* Seccion opciones ----------------------------*/
+.opciones{
+    grid-area: opciones;
+}
+
+/* Fin seccion opciones ----------------------------*/
+
+/* Carrusel ----------------------------*/
+.carrusel{
+    grid-area: carrusel;
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.title{
+    font-size: 2rem;
+    font-weight: bold;
+}
+/* Fin carrusel ----------------------------*/
+
+
+/* Main  ---------------------------- */
+.main {
+    text-align: justify;
+    grid-area: main;
+    margin-top: 3rem;
+}
+/* Fin main ----------------------------  */
+
+
+/* sidebar ----------------------------*/
+.sidebar{
+    grid-area: sidebar;
+    margin-top: 3rem;
+    margin-left: 8rem;
+}
+
+.sidebar button{
+    margin-bottom: 0.5rem;
+    padding-right: 5rem;
+}
+/* fin sidebar ----------------------------*/
+
+/* distribucion del grid container ----------------------------*/
+.grid-container{
+
+    display: grid;
+
+    /* default (para dispositivos grandes) */
+    grid-template-areas: 
+        "navbar navbar navbar" 
+        "opciones opciones opciones"
+        "carrusel carrusel carrusel"
+        "sidebar main main"
+    ;
+}
+
+/* media querie para dispositivos medianos*/
+@media (max-width: 1000px){
+    .grid-container{
+        grid-template-areas: 
+            "navbar navbar"
+            "opciones opciones"
+            "main main"
+        ;
+    
+    }
+    .opciones{
+        margin-top: 2rem;
+    }
+    .opciones button{
+        margin-top: 1rem;
+        padding-right: 15rem;
+    }
+    .carrusel{
+        display: none;
+    }
+    .sidebar{
+        display: none;
+    }
+}
+
+/* media para dispositivos pequeños */
+@media (min-width: 1px) and (max-width: 768) {
+    .grid-container{
+        grid-template-areas: 
+            "navbar"
+            "opciones"
+            "main"
+        ;
+    }
+    
+}
+
+/* que no aparezca el boton de opciones cuando e sun dispositivo grande */
+@media (min-width: 1001px){
+    .opciones{
+        display: none;
+    }
+    #opcionesBtn{
+        display: none;
+    }
+
+}
+
